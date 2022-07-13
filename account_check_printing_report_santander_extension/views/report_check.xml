@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="report_check_st_inherit"
+        inherit_id="account_check_printing_report_santander.report_check_st"
+    >
+        <xpath expr="//div[@name='company_data']" position="attributes">
+            <attribute
+                name="style"
+            >position: absolute; left: 3mm; max-height: 40mm; max-width: 90mm; visibility: hidden</attribute>
+        </xpath>
+    </template>
+</odoo>

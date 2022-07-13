@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="external_layout_standard_gastraval"
+        inherit_id="web.external_layout_standard"
+    >
+        <xpath
+            expr="//div[@t-att-style='report_header_style']/div"
+            position="attributes"
+        >
+            <attribute name="class" add="zero_min_height" separator=" " />
+        </xpath>
+        <xpath
+            expr="//div[@t-att-style='report_header_style']/div/div"
+            position="attributes"
+        >
+            <attribute name="class">col-3</attribute>
+        </xpath>
+        <xpath expr="//div[@name='moto']" position="attributes">
+            <attribute name="class" add="d-none" separator=" " />
+        </xpath>
+        <xpath expr="//img[@t-if='company.logo']" position="attributes">
+            <attribute name="style">max-height: 110px;</attribute>
+        </xpath>
+        <xpath expr="//div[@name='company_address']/.." position="attributes">
+            <attribute name="class" add="d-none" separator=" " />
+        </xpath>
+        <xpath expr="//img[@t-if='company.logo']/.." position="after">
+            <div class="col-6 small" name="company_address">
+                <div
+                    t-field="company.partner_id"
+                    t-options="{'widget': 'contact', 'fields': ['address', 'name', 'phone'], 'no_marker': true}"
+                />
+                <div t-field="company.vat" />
+            </div>
+            <div
+                class="col-3 text-right"
+                style="margin-top:22px;"
+                t-field="company.report_header"
+                name="moto"
+            />
+        </xpath>
+        <xpath expr="//ul" position="replace">
+            <ul class="list-inline mb4 small">
+                <li t-if="company.company_registry" class="list-inline-item d-inline">
+                    <span t-field="company.company_registry" />
+                </li>
+                <li t-if="company.website" class="list-inline-item d-inline o_bold">
+                    <span t-field="company.website" />
+                </li>
+            </ul>
+        </xpath>
+    </template>
+</odoo>

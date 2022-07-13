@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record
+        id="mrp_workorder_employee_record_production_wizard_form"
+        model="ir.ui.view"
+    >
+        <field name="name">mrp.workorder.employee.record.production.wizard.form</field>
+        <field name="model">mrp.workorder.employee.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field
+                        name="employee_id"
+                        domain="[
+                            ('workorder_selectable','=', True),
+                            ('department_id', 'child_of', %(hr_department_production)d)
+                        ]"
+                        options="{'no_create': True}"
+                    />
+                    <field name="print_pallet_label_product" invisible="1" />
+                    <field name="print_pallet_label_workcenter" invisible="1" />
+                    <field
+                        name="package_id"
+                        attrs="{
+                            'invisible': [
+                                '|',
+                                ('print_pallet_label_product', '=', False),
+                                ('print_pallet_label_workcenter', '=', False)
+                            ]
+                        }"
+                        options="{'no_create': True}"
+                    />
+                </group>
+                <footer>
+                    <button
+                        string="Registrar producción"
+                        name="record_production"
+                        type="object"
+                        class="oe_highlight"
+                        invisible="not context.get('record_production')"
+                    />
+                    <button
+                        name="action_open_manufacturing_order"
+                        type="object"
+                        string="MARCAR COMO HECHO Y CERRAR OP"
+                        icon="fa-check"
+                        class="btn-primary"
+                        barcode_trigger="cloMO"
+                        invisible="context.get('record_production')"
+                    />
+                    <button string="Cancelar" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

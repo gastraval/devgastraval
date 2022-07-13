@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="report_saleorder_tree_list">
+        <t t-call="web.html_container">
+            <t t-set="company" t-value="res_company" />
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th class="text-center">
+                                    <t t-esc="th_name">Pedido</t>
+                                </th>
+                                <th class="text-center">
+                                    <t t-esc="th_client_order_ref">Pedido cliente</t>
+                                </th>
+                                <th class="text-center">
+                                    <t t-esc="th_delivery_date">Fecha salida</t>
+                                </th>
+                                <th class="text-center">
+                                    <t t-esc="th_commitment_date">Fecha entrega</t>
+                                </th>
+                                <th class="text-center">
+                                    <t t-esc="th_delivery_method">Transportista</t>
+                                </th>
+                                <th class="text-center">
+                                    <t
+                                        t-esc="th_partner_shipping_id"
+                                    >Dirección entrega</t>
+                                </th>
+                                <th class="text-center">
+                                    <t t-esc="th_total_boxes">Cajas</t>
+                                </th>
+                                <th class="text-center">
+                                    <t t-esc="th_total_tray">Bandejas</t>
+                                </th>
+                                <th class="text-center">
+                                    <t t-esc="th_total_weight">Peso </t>
+                                </th>
+                                <th class="text-center">
+                                    <t t-esc="th_temperature">Temperatura</t>
+                                </th>
+                                <th class="text-center">
+                                    <t t-esc="th_order_line">Líneas pedido</t>
+                                </th>
+                                <th class="text-center">
+                                    <t t-esc="th_order_line_qty">Cantidad</t>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="docs" t-as="doc">
+                                <td class="text-center">
+                                    <span t-field="doc.name" />
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="doc.client_order_ref" />
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="doc.commitment_date" />
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="doc.delivery_date" />
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="doc.delivery_method" />
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="doc.partner_shipping_id.name" />
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="doc.total_boxes" />
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="doc.total_tray" />
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="doc.total_weight" />
+                                </td>
+                                <td class="text-center">
+                                    <span t-field="doc.temperature" />
+                                </td>
+                                <td class="text-center w-25">
+                                    <t t-foreach="doc.order_line" t-as="names">
+                                        <p class="mb-0" t-field="names.name" />
+                                    </t>
+                                </td>
+                                <td class="text-right">
+                                    <t t-foreach="doc.order_line" t-as="qtys">
+                                        <p class="mb-0" t-field="qtys.product_qty" />
+                                    </t>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <report
+        id="action_report_tree_list"
+        string="Listado de pedidos"
+        model="sale.order"
+        report_type="qweb-pdf"
+        file="sale_order_report_gastraval.report_saleorder_tree_list"
+        name="sale_order_report_gastraval.report_saleorder_tree_list"
+        print_report_name="'Sale list - %s' % (object.name)"
+    />
+    <record id="report_sale_qweb_paperformat" model="report.paperformat">
+        <field name="name">sale.order.qweb.paperformat</field>
+        <field name="default" eval="True" />
+        <field name="format">A4</field>
+        <field name="orientation">Landscape</field>
+        <field name="dpi">140</field>
+    </record>
+    <record id="action_report_tree_list" model="ir.actions.report">
+        <field name="paperformat_id" ref="report_sale_qweb_paperformat" />
+        <field name="attachment_use" eval="False" />
+    </record>
+</odoo>

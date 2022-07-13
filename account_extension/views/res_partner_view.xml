@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_partner_tree" model="ir.ui.view">
+        <field name="name">view.partner.inherited.tree</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field
+                    name="supplier_payment_mode_id"
+                    invisible="context.get('res_partner_search_mode') == 'customer'"
+                />
+                <field
+                    name="property_supplier_payment_term_id"
+                    invisible="context.get('res_partner_search_mode') == 'customer'"
+                />
+                <field
+                    name="customer_payment_mode_id"
+                    invisible="context.get('res_partner_search_mode') == 'supplier'"
+                />
+                <field
+                    name="property_payment_term_id"
+                    invisible="context.get('res_partner_search_mode') == 'supplier'"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>

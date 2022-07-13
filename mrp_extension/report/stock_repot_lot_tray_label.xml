@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_lot_label_soup">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="o">
+                <t>
+                    <div class="page">
+                        <div class="oe_structure" />
+                        <div class="row">
+                            <div class="col text-center h6">
+                                <span t-field="o.product_id.x_studio_nombre_caldo" />
+                            </div>
+                        </div>
+                        <div class="row" style="font-size: 11px;margin-bottom:4px">
+                            <div class="col-8 small o_bold">
+                                <span>Conservación:</span>
+                                <span t-field="o.product_id.description" />
+                            </div>
+                            <div class="col-4 small o_bold">
+                                <span>Referencia:</span>
+                                <span t-field="o.product_id.default_code" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-8 small">
+                                <span
+                                    t-field="o.product_id.x_studio_ingredientes_etiqueta_caldo"
+                                />
+                            </div>
+                            <div class="col-4">
+                                <span
+                                    t-field="o.product_id.x_studio_valores_nutricionales_caldo"
+                                />
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom:5px">
+                            <div
+                                class="col-12 small"
+                                style="font-size: 8px; text-align: justify"
+                            >
+                                <span>Método de regeneración: </span>
+                                <span
+                                    t-field="o.product_id.x_studio_mtodo_de_regenaracin"
+                                />
+                            </div>
+                        </div>
+                        <div class="row o_bold" style="font-size: 11px;">
+                            <div class="col-6">
+                                <div>
+                                    <span>Lote: </span>
+                                    <span t-field="o.finished_lot_id.name" />
+                                </div>
+                                <div style="font-size: 9px;">
+                                    <span>Fecha de caducidad: </span>
+                                    <span
+                                        t-field="o.finished_lot_id.life_date"
+                                        t-options-widget="&quot;date&quot;"
+                                    />
+                                </div>
+                                <div style="font-size: 9px;">
+                                    <span>Peso neto: </span>
+                                    <span
+                                        t-field="o.product_id.x_studio_peso_bandeja_caldo"
+                                        t-options-precision="3"
+                                    />
+                                    <span>kg</span>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <img
+                                    class="img-fluid"
+                                    src="/mrp_extension/static/src/img/RESGISTRO.jpg"
+                                />
+                            </div>
+                            <div class="col-4">
+                                <img
+                                    class="img-fluid"
+                                    src="/mrp_extension/static/src/img/ELABORACION.png"
+                                />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <img
+                                    t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;quiet=0' % ('Code128', o.finished_lot_id.x_studio_barcode_caldo, 8000, 250)"
+                                    style="width:360px;height:40px"
+                                />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center" style="font-size: 8px;">
+                                <span
+                                    t-field="o.finished_lot_id.x_studio_cdigo_de_barras_caldo"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+    <template id="report_lot_label_preparation">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="o">
+                <t>
+                    <div class="page">
+                        <div class="oe_structure" />
+                        <div class="row">
+                            <div class="col text-center h6">
+                                <span t-field="o.product_id.name" />
+                            </div>
+                        </div>
+                        <div class="row" style="font-size: 11px;margin-bottom:4px">
+                            <div class="col-8 small o_bold">
+                                <span>Conservación:</span>
+                                <span t-field="o.product_id.description" />
+                            </div>
+                            <div class="col-4 small o_bold">
+                                <span>Referencia:</span>
+                                <span t-field="o.product_id.default_code" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-8 small">
+                                <span
+                                    t-field="o.product_id.x_studio_ingredientes_etiqueta"
+                                />
+                            </div>
+                            <div class="col-4">
+                                <span
+                                    t-field="o.product_id.x_studio_valores_nutricionales"
+                                />
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom:5px">
+                            <div
+                                class="col-12 small"
+                                style="font-size: 8px; text-align: justify"
+                            >
+                                <span>Método de regeneración: </span>
+                                <span
+                                    t-field="o.product_id.x_studio_mtodo_de_regenaracin"
+                                />
+                            </div>
+                        </div>
+                        <div class="row o_bold" style="font-size: 11px;">
+                            <div class="col-6">
+                                <div>
+                                    <span>Lote: </span>
+                                    <span t-field="o.finished_lot_id.name" />
+                                </div>
+                                <div style="font-size: 9px;">
+                                    <span>Fecha de caducidad: </span>
+                                    <span
+                                        t-field="o.finished_lot_id.life_date"
+                                        t-options-widget="&quot;date&quot;"
+                                    />
+                                </div>
+                                <div style="font-size: 9px;">
+                                    <span>Peso neto: </span>
+                                    <span
+                                        t-field="o.product_id.x_studio_peso_bandeja"
+                                        t-options-precision="3"
+                                    />
+                                    <span>kg</span>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <img
+                                    class="img-fluid"
+                                    src="/mrp_extension/static/src/img/RESGISTRO.jpg"
+                                />
+                            </div>
+                            <div class="col-4">
+                                <img
+                                    class="img-fluid"
+                                    src="/mrp_extension/static/src/img/ELABORACION.png"
+                                />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <img
+                                    t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;quiet=0' % ('Code128', o.finished_lot_id.x_studio_barcode_bandeja, 8000, 250)"
+                                    style="width:360px;height:40px"
+                                />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center" style="font-size: 8px;">
+                                <span
+                                    t-field="o.finished_lot_id.x_studio_cdigo_de_barras_bandeja"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+    <template id="report_lot_preparation_label">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="mrp_extension.report_lot_label_preparation" />
+        </t>
+    </template>
+    <template id="report_lot_soup_label">
+        <t t-foreach="docs" t-as="o">
+            <t t-set="o" t-value="o.with_context(report_model='report_soup')" />
+            <t t-call="mrp_extension.report_lot_label_soup" />
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,35 @@
+# Copyright 2020 Studio73 - Pablo Álvarez <pablo.alvarez@studio73.es>
+# License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+{
+    "name": "Mrp Extension",
+    "version": "13.0.1.3.0",
+    "license": "LGPL-3",
+    "author": "Studio73",
+    "category": "Production",
+    "website": "https://www.studio73.es",
+    "depends": [
+        "mrp_workorder",
+        "mrp_production_close",
+        "mrp_workorder_extra_production",
+        "mrp_workorder_material_control",
+        "hr",
+        "web",
+    ],
+    "data": [
+        "data/hr_department.xml",
+        "views/assets.xml",
+        "views/mrp_workorder_views.xml",
+        "views/mrp_production_views.xml",
+        "views/product_template_views.xml",
+        "views/mrp_workcenter_views.xml",
+        "views/hr_employee.xml",
+        "views/stock_production_lot_view.xml",
+        "wizard/mrp_workorder_employee_wizard.xml",
+        "wizard/mrp_workorder_tray_report.xml",
+        "report/stock_report_view.xml",
+        "report/stock_report_lot_box_label.xml",
+        "report/stock_repot_lot_tray_label.xml",
+    ],
+    "external_dependencies": {"python": ["openupgradelib"]},
+    "installable": True,
+}

@@ -1,0 +1,113 @@
+<odoo>
+    <template id="report_lot_label_copy_1">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="o">
+                <t>
+                    <div class="page">
+                        <div class="oe_structure" />
+                        <div class="row o_bold h6">
+                            <div class="col-10 text-center">
+                                <span t-field="o.product_id.name" />
+                            </div>
+                            <div class="col-2">
+                                <img
+                                    src="/mrp_extension/static/src/img/RESGISTRO.jpg"
+                                    class="img-fluid"
+                                />
+                            </div>
+                        </div>
+                        <div class="row o_bold h6">
+                            <div class="col-12">
+                                <span t-field="o.product_id.description" />
+                            </div>
+                        </div>
+                        <div class="row o_bold h6">
+                            <div class="col-6">
+                                <span>Peso neto: </span>
+                                <span
+                                    t-field="o.product_id.weight"
+                                    t-options='{"widget": "float", "precision": 3}'
+                                />
+                                <span t-field="o.product_id.weight_uom_name" />
+                            </div>
+                            <div class="col-6">
+                                <span>(</span>
+                                <span
+                                    t-if="o.product_id.sale_secondary_uom_id.factor != 0"
+                                >
+                                    <t
+                                        t-esc="int(1/o.product_id.sale_secondary_uom_id.factor)"
+                                    />
+                                </span>
+                                <span>Unidades/Caja)</span>
+                            </div>
+                        </div>
+                        <div class="row o_bold h6">
+                            <div class="col-6">
+                                <span>Lote: </span>
+                                <span t-field="o.finished_lot_id.name" />
+                            </div>
+                            <div class="col-6 text-center">
+                                <span class="text-center">Referencia: </span>
+                                <span t-field="o.product_id.default_code" />
+                            </div>
+                        </div>
+                        <div class="row o_bold h6">
+                            <div class="col-12">
+                                <span>Fecha de caducidad: </span>
+                                <span
+                                    t-field="o.finished_lot_id.life_date"
+                                    t-options='{"widget": "date"}'
+                                />
+                            </div>
+                        </div>
+                        <div class="row o_bold h6">
+                            <div class="col-7">
+                                <span>DUN-14: </span>
+                                <span t-field="o.product_id.barcode" />
+                            </div>
+                            <div class="col-5">
+                                <img
+                                    class="img-fluid"
+                                    src="/mrp_extension/static/src/img/ELABORACION.png"
+                                />
+                            </div>
+                        </div>
+                        <div class="row o_bold text-center h6">
+                            <div class="col-12">
+                                <t
+                                    t-if="'x_studio_cdigo_de_barras' in o.finished_lot_id.fields_get()"
+                                >
+                                    <img
+                                        t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;quiet=0' % ('Code128', o.finished_lot_id.x_studio_cdigo_de_barras, 8000, 250)"
+                                        style="width:495px;height:120px"
+                                    />
+                                </t>
+                                <t t-else="">
+                                    <img
+                                        t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;quiet=0' % ('Code128', o.finished_lot_id.barcode, 8000, 250)"
+                                        style="width:460px;height:100px"
+                                    />
+                                </t>
+                            </div>
+                        </div>
+                        <div class="row text-center h6">
+                            <div class="col-12">
+                                <t
+                                    t-if="'x_studio_cdigo_de_barras' in o.finished_lot_id.fields_get()"
+                                >
+                                    <span
+                                        t-field="o.finished_lot_id.x_studio_cdigo_de_barras"
+                                    />
+                                </t>
+                                <t t-else="">
+                                    <span t-field="o.finished_lot_id.barcode" />
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

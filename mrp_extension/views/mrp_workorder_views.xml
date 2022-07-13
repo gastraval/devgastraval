@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_mrp_production_work_order_kanban" model="ir.ui.view">
+        <field name="name">mrp.production.work.order.kanban</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.workcenter_line_kanban" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="date_planned_start" />
+            </xpath>
+            <xpath expr="//div[hasclass('o_kanban_record_bottom')]" position="after">
+                <div class="o_kanban_record_bottom">
+                    <h5>
+                        <t t-esc="record.date_planned_start.value or False" />
+                    </h5>
+                </div>
+            </xpath>
+        </field>
+    </record>
+    <record id="mrp_workorder_view_form_tablet_close_ow" model="ir.ui.view">
+        <field name="name">mrp.workorder.view.form.tablet.print.labels</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp_workorder.mrp_workorder_view_form_tablet" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//button[@name='action_open_manufacturing_order']"
+                position="after"
+            >
+                <button
+                    name="action_close"
+                    type="object"
+                    string="MARCAR COMO HECHO Y CERRAR OP"
+                    icon="fa-check"
+                    class="btn-primary"
+                    attrs="{'invisible': ['|', '|', '|', ('qty_produced', '=', 0), ('is_last_lot', '=', False), ('is_last_unfinished_wo', '=', False), ('is_last_step', '=', True)]}"
+                />
+            </xpath>
+            <xpath expr="//div[hasclass('workorder_bar')]" position="after">
+                <div class="workorder_bar">
+                    <div class="workorder_bar_left o_workorder_bar_content">
+                        <label for="qty_producing" string="Cantidad producida actual" />
+                        <field name="qty_produced" readonly="1" />
+                        <label for="product_uom_id" string="" />
+                        <field
+                            name="product_uom_id"
+                            options="{'no_open': True}"
+                            readonly="1"
+                        />
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+    <record id="mrp_workorder_view_form_tablet" model="ir.ui.view">
+        <field name="name">mrp.workorder.view.form.inherit.quality.tablet.new</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp_workorder.mrp_workorder_view_form_tablet" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//button[@name='action_open_manufacturing_order']"
+                position="attributes"
+            >
+                <attribute name="name">open_button_pending_wizard</attribute>
+            </xpath>
+            <xpath expr="//button[@name='record_production']" position="attributes">
+                <attribute name="name">record_production_and_stop</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_next']" position="before">
+                <field name="print_tray_label" invisible="1" />
+                <field name="print_box_label" invisible="1" />
+                <button
+                    name="print_label_tray"
+                    class="btn-primary"
+                    type="object"
+                    string="Print Tray Label"
+                    attrs="{'invisible': [('print_tray_label', '!=', True)]}"
+                />
+                <field name="default_code" invisible="1" />
+                <field name="is_soup_preparation" invisible="1" />
+                <button
+                    name="print_label_box"
+                    class="btn-primary"
+                    type="object"
+                    string="Print Box Label"
+                    attrs="{'invisible': ['|', '|', ('print_box_label', '!=', True), ('default_code', 'like', 'EL0'), ('is_soup_preparation', '=', True)]}"
+                />
+            </xpath>
+        </field>
+    </record>
+    <record id="mrp_production_workorder_form_view_inherit" model="ir.ui.view">
+        <field name="name">mrp.production.work.order.form</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//field[@name='time_ids']/tree/field[@name='date_end']"
+                position="after"
+            >
+                <field name="employee_id" />
+            </xpath>
+            <xpath
+                expr="//page[@name='workorder_page_misc']/group/group"
+                position="inside"
+            >
+                <field name="barcode" />
+            </xpath>
+            <xpath
+                expr="//field[@name='worksheet_type']/parent::page"
+                position="attributes"
+            >
+                <attribute name="attrs" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

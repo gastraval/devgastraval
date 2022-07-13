@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="account_move_invoice_tree_inherit" model="ir.ui.view">
+        <field name="name">account.move.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_invoice_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_date']" position="after">
+                <field
+                    name="date"
+                    string="Fecha contable"
+                    invisible="context.get('default_type') not in ('in_invoice', 'in_refund','in_receipt')"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="product_template_product_form_active_waste" model="ir.ui.view">
+        <field name="name">product.template.product.form.active_waste</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='categ_id']" position="after">
+                <field name="active_waste" />
+                <field name="is_soup_preparation" />
+                <field name="print_box_label" />
+                <field name="print_tray_label" />
+                <field name="print_pallet_label" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

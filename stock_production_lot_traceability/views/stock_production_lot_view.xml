@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_production_lot_form_inherit" model="ir.ui.view">
+        <field name="name">stock.production.lot.form.inherit</field>
+        <field name="model">stock.production.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_lot_open_quants']" position="before">
+                <button
+                    name="action_lot_open_move_lines"
+                    class="oe_stat_button"
+                    string="Consumido para"
+                    icon="fa-arrow-up"
+                    type="object"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>

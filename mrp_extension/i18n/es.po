@@ -1,0 +1,360 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mrp_extension
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-10 09:24+0000\n"
+"PO-Revision-Date: 2021-09-10 09:24+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mrp_extension
+#: model:ir.actions.report,print_report_name:mrp_extension.stock_report_lot_box
+#: model:ir.actions.report,print_report_name:mrp_extension.stock_report_lot_soup_tray
+#: model:ir.actions.report,print_report_name:mrp_extension.stock_report_lot_tray
+msgid "'Lote-Número de Serie - %s' % (object.finished_lot_id.name)"
+msgstr ""
+
+#. module: mrp_extension
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_copy_1
+msgid "<span class=\"text-center\">Referencia: </span>"
+msgstr ""
+
+#. module: mrp_extension
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_preparation
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_soup
+msgid "<span>Conservación:</span>"
+msgstr ""
+
+#. module: mrp_extension
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_copy_1
+msgid "<span>DUN-14: </span>"
+msgstr ""
+
+#. module: mrp_extension
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_preparation
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_soup
+msgid "<span>Fecha de caducidad: </span>"
+msgstr ""
+
+#. module: mrp_extension
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_copy_1
+msgid "<span>Fecha de caducidad: </span>"
+msgstr ""
+
+#. module: mrp_extension
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_preparation
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_soup
+msgid "<span>Lote: </span>"
+msgstr ""
+
+#. module: mrp_extension
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_copy_1
+msgid "<span>Lote: </span>"
+msgstr ""
+
+#. module: mrp_extension
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_preparation
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_soup
+msgid "<span>Método de regeneración: </span>"
+msgstr ""
+
+#. module: mrp_extension
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_preparation
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_soup
+msgid "<span>Peso neto: </span>"
+msgstr ""
+
+#. module: mrp_extension
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_copy_1
+msgid "<span>Peso neto: </span>"
+msgstr ""
+
+#. module: mrp_extension
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_preparation
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_soup
+msgid "<span>Referencia:</span>"
+msgstr ""
+
+#. module: mrp_extension
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_copy_1
+msgid "<span>Unidades/Caja)</span>"
+msgstr ""
+
+#. module: mrp_extension
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_preparation
+#: model_terms:ir.ui.view,arch_db:mrp_extension.report_lot_label_soup
+msgid "<span>kg</span>"
+msgstr ""
+
+#. module: mrp_extension
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_production__active_waste
+#: model:ir.model.fields,field_description:mrp_extension.field_product_product__active_waste
+#: model:ir.model.fields,field_description:mrp_extension.field_product_template__active_waste
+msgid "Activar mermas"
+msgstr ""
+
+#. module: mrp_extension
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder__barcode
+#: model:ir.model.fields,field_description:mrp_extension.field_stock_production_lot__barcode
+msgid "Barcode"
+msgstr "Código de barras"
+
+#. module: mrp_extension
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workcenter__block_same_product
+msgid "Bloquear ordenes de trabajo"
+msgstr ""
+
+#. module: mrp_extension
+#: model_terms:ir.ui.view,arch_db:mrp_extension.mrp_workorder_employee_record_production_wizard_form
+#: model_terms:ir.ui.view,arch_db:mrp_extension.mrp_workorder_tray_report_wizard_view
+msgid "Cancelar"
+msgstr ""
+
+#. module: mrp_extension
+#: model_terms:ir.ui.view,arch_db:mrp_extension.mrp_workorder_view_form_tablet_close_ow
+msgid "Cantidad producida actual"
+msgstr ""
+
+#. module: mrp_extension
+#: model:ir.model,name:mrp_extension.model_mrp_abstract_workorder
+msgid "Common code between produce wizards and workorders."
+msgstr "Código común entre asistentes de producción y pedidos de trabajo."
+
+#. module: mrp_extension
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder_employee_wizard__create_uid
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder_tray_report__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: mrp_extension
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder_employee_wizard__create_date
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder_tray_report__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: mrp_extension
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder__default_code
+msgid "Default Code"
+msgstr "Referencia interna"
+
+#. module: mrp_extension
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder_employee_wizard__display_name
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder_tray_report__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: mrp_extension
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workcenter_productivity__employee_id
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder_employee_wizard__employee_id
+msgid "Empleado"
+msgstr ""
+
+#. module: mrp_extension
+#: model:ir.model,name:mrp_extension.model_hr_employee
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: mrp_extension
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder_employee_wizard__id
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder_tray_report__id
+msgid "ID"
+msgstr ""
+
+#. module: mrp_extension
+#: code:addons/mrp_extension/models/mrp_workorder.py:0
+#, python-format
+msgid "Introduzca su identificador de empleado"
+msgstr ""
+
+#. module: mrp_extension
+#: code:addons/mrp_extension/models/mrp_workorder.py:0
+#, python-format
+msgid "La orden de producción {} tiene alguna orden de trabajo abierta"
+msgstr ""
+
+#. module: mrp_extension
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder_employee_wizard____last_update
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder_tray_report____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: mrp_extension
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder_employee_wizard__write_uid
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder_tray_report__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: mrp_extension
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder_employee_wizard__write_date
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder_tray_report__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: mrp_extension
+#: model:ir.model,name:mrp_extension.model_stock_production_lot
+msgid "Lot/Serial"
+msgstr "Lote/Número de serie"
+
+#. module: mrp_extension
+#: model_terms:ir.ui.view,arch_db:mrp_extension.mrp_workorder_employee_record_production_wizard_form
+#: model_terms:ir.ui.view,arch_db:mrp_extension.mrp_workorder_view_form_tablet_close_ow
+msgid "MARCAR COMO HECHO Y CERRAR OP"
+msgstr ""
+
+#. module: mrp_extension
+#: model:ir.model.fields.selection,name:mrp_extension.selection__mrp_workorder_tray_report__tray_report_type__preparation
+msgid "Preparation Label"
+msgstr "Etiqueta preparado"
+
+#. module: mrp_extension
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder__print_box_label
+#: model:ir.model.fields,field_description:mrp_extension.field_product_product__print_box_label
+#: model:ir.model.fields,field_description:mrp_extension.field_product_template__print_box_label
+#: model_terms:ir.ui.view,arch_db:mrp_extension.mrp_workorder_view_form_tablet
+msgid "Print Box Label"
+msgstr "Imprimir etiqueta caja"
+
+#. module: mrp_extension
+#: model_terms:ir.ui.view,arch_db:mrp_extension.mrp_workorder_tray_report_wizard_view
+msgid "Print Label"
+msgstr "Imprimir etiqueta"
+
+#. module: mrp_extension
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workcenter__print_pallet_label
+#: model:ir.model.fields,field_description:mrp_extension.field_product_product__print_pallet_label
+#: model:ir.model.fields,field_description:mrp_extension.field_product_template__print_pallet_label
+msgid "Print Pallet Label"
+msgstr "Imprimir etiqueta pallet"
+
+#. module: mrp_extension
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder__print_tray_label
+#: model:ir.model.fields,field_description:mrp_extension.field_product_product__print_tray_label
+#: model:ir.model.fields,field_description:mrp_extension.field_product_template__print_tray_label
+#: model_terms:ir.ui.view,arch_db:mrp_extension.mrp_workorder_view_form_tablet
+msgid "Print Tray Label"
+msgstr "Imprimir etiqueta bandeja"
+
+#. module: mrp_extension
+#: model:ir.model,name:mrp_extension.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: mrp_extension
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder__is_soup_preparation
+#: model:ir.model.fields,field_description:mrp_extension.field_product_product__is_soup_preparation
+#: model:ir.model.fields,field_description:mrp_extension.field_product_template__is_soup_preparation
+msgid "Product With Soup And Preparation"
+msgstr "Producto con caldo y preparado"
+
+#. module: mrp_extension
+#: model:ir.model,name:mrp_extension.model_mrp_production
+msgid "Production Order"
+msgstr "Orden de fabricación"
+
+#. module: mrp_extension
+#: code:addons/mrp_extension/models/mrp_workorder.py:0
+#: model_terms:ir.ui.view,arch_db:mrp_extension.mrp_workorder_employee_record_production_wizard_form
+#, python-format
+msgid "Registrar producción"
+msgstr ""
+
+#. module: mrp_extension
+#: model:ir.actions.report,name:mrp_extension.stock_report_lot_soup_tray
+msgid "Reporte bandeja caldo"
+msgstr ""
+
+#. module: mrp_extension
+#: model:ir.actions.report,name:mrp_extension.stock_report_lot_tray
+msgid "Reporte bandeja preparado"
+msgstr ""
+
+#. module: mrp_extension
+#: model:ir.actions.report,name:mrp_extension.stock_report_lot_box
+msgid "Reporte caja"
+msgstr ""
+
+#. module: mrp_extension
+#: model:ir.model.fields,field_description:mrp_extension.field_hr_employee__workorder_selectable
+msgid "Seleccionable para ordenes de trabajo"
+msgstr ""
+
+#. module: mrp_extension
+#: code:addons/mrp_extension/wizard/mrp_workorder_employee_wizard.py:0
+#, python-format
+msgid "Seleccione una única órden de trabajo para registrar"
+msgstr ""
+
+#. module: mrp_extension
+#: model_terms:ir.ui.view,arch_db:mrp_extension.mrp_workorder_tray_report_wizard_view
+msgid "Selector del tipo de etiqueta de bandeja"
+msgstr ""
+
+#. module: mrp_extension
+#: model:ir.model,name:mrp_extension.model_mrp_workorder_tray_report
+msgid "Selector del tipo de reporte de bandeja"
+msgstr ""
+
+#. module: mrp_extension
+#: model:ir.model.fields,help:mrp_extension.field_product_product__active_waste
+#: model:ir.model.fields,help:mrp_extension.field_product_template__active_waste
+msgid ""
+"Si se activa , al fabricar este producto, la cantidad de materiales a "
+"consumir no cambiará en caso de producir más o menos cantidad final."
+msgstr ""
+
+#. module: mrp_extension
+#: model:ir.model.fields,help:mrp_extension.field_mrp_production__active_waste
+msgid ""
+"Si se activa la cantidad de materiales a consumir no cambiará en caso de "
+"producir más o menos cantidad final."
+msgstr ""
+
+#. module: mrp_extension
+#: code:addons/mrp_extension/models/mrp_workorder.py:0
+#, python-format
+msgid "Solo puede haber una orden de trabajo en progreso por producto"
+msgstr ""
+
+#. module: mrp_extension
+#: model:ir.model.fields.selection,name:mrp_extension.selection__mrp_workorder_tray_report__tray_report_type__soup
+msgid "Soup Label"
+msgstr "Etiqueta de caldo"
+
+#. module: mrp_extension
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder_tray_report__tray_report_type
+msgid "Tray Report Type"
+msgstr "Tipo de etiqueta"
+
+#. module: mrp_extension
+#: model:ir.model,name:mrp_extension.model_mrp_workorder_employee_wizard
+msgid "Wizard para pedir número de empleado"
+msgstr ""
+
+#. module: mrp_extension
+#: model:ir.model,name:mrp_extension.model_mrp_workcenter
+msgid "Work Center"
+msgstr "Centro de producción"
+
+#. module: mrp_extension
+#: model:ir.model,name:mrp_extension.model_mrp_workorder
+msgid "Work Order"
+msgstr "Orden de trabajo"
+
+#. module: mrp_extension
+#: model:ir.model,name:mrp_extension.model_mrp_workcenter_productivity
+msgid "Workcenter Productivity Log"
+msgstr "Registro de productividad del centro de trabajo"
+
+#. module: mrp_extension
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder_employee_wizard__workorder_id
+#: model:ir.model.fields,field_description:mrp_extension.field_mrp_workorder_tray_report__workorder_id
+msgid "Órden de trabajo"
+msgstr ""

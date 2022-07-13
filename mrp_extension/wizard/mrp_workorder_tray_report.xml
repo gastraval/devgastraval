@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="mrp_workorder_tray_report_wizard_view" model="ir.ui.view">
+        <field name="name">mrp.workorder.tray.report.wizard.view</field>
+        <field name="model">mrp.workorder.tray.report</field>
+        <field name="arch" type="xml">
+            <form string="Selector del tipo de etiqueta de bandeja">
+                <group>
+                    <field name="tray_report_type" />
+                </group>
+                <footer>
+                    <button
+                        string="Print Label"
+                        name="action_print_tray_label"
+                        type="object"
+                        class="oe_highlight"
+                    />
+                    <button string="Cancelar" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

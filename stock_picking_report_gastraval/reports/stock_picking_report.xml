@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <report
+        id="action_report_tree_list"
+        string="Listado de resumen de inventario"
+        model="stock.picking"
+        report_type="qweb-pdf"
+        file="stock_picking_report_gastraval.report_stockpicking_tree_list"
+        name="stock_picking_report_gastraval.report_stockpicking_tree_list"
+        print_report_name="'Stock resume list - %s' % (object.name)"
+    />
+    <record id="report_stock_picking_qweb_paperformat" model="report.paperformat">
+        <field name="name">stock.picking.order.qweb.paperformat</field>
+        <field name="default" eval="True" />
+        <field name="format">A4</field>
+        <field name="orientation">Landscape</field>
+    </record>
+    <record id="action_report_tree_list" model="ir.actions.report">
+        <field name="paperformat_id" ref="report_stock_picking_qweb_paperformat" />
+        <field name="attachment_use" eval="False" />
+    </record>
+</odoo>

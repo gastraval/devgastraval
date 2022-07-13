@@ -1,0 +1,41 @@
+studio73-private-addons git@github.com:Studio73/studio73-private-addons.git
+studio73-enterprise-addons git@github.com:Studio73/studio73-enterprise-addons.git
+enterprise git@github.com:Studio73/enterprise.git
+account-analytic
+account-closing
+account-financial-reporting
+account-financial-tools
+account-invoicing
+account-invoice-reporting
+account-payment
+account-reconcile
+bank-payment
+bank-statement-import
+commission
+community-data-files
+connector
+credit-control
+crm
+edi
+intrastat-extrastat
+knowledge
+l10n-spain
+maintenance
+manufacture
+mis-builder
+partner-contact
+product-attribute
+product-variant
+purchase-workflow
+queue
+reporting-engine https://github.com/OCA/reporting-engine.git 13.0 f95255aa15e128f97d79890fb27a0c4a491b4f87
+report-print-send
+sale-workflow
+server-tools
+server-ux
+social
+stock-logistics-barcode
+stock-logistics-transport
+stock-logistics-warehouse
+stock-logistics-workflow
+web

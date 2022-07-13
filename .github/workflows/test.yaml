@@ -1,0 +1,59 @@
+name: Test
+on:
+  pull_request:
+    branches: 13.0
+    types: [ready_for_review, opened, synchronize, reopened]
+
+jobs:
+  check_ci_skip:
+    runs-on: ubuntu-20.04
+    if: github.event.pull_request.draft == false
+    outputs:
+      ci_skip: ${{ steps.check.outputs.result }}
+    steps:
+      - uses: actions/checkout@v2.3.3
+        with:
+          fetch-depth: 2
+      - id: check
+        run: |
+          git --no-pager log --no-merges -1 --oneline | grep 'ci skip\|skip ci' \
+            && echo '::set-output name=result::true' \
+            || echo '::set-output name=result::false'
+  test:
+    runs-on: ubuntu-20.04
+    needs: check_ci_skip
+    if:
+      "github.event.pull_request.draft == false && needs.check_ci_skip.outputs.ci_skip
+      == 'false'"
+    container: studio73/gha-oca-mqt:13.0
+    services:
+      # DOCS: https://github.com/actions/example-services/blob/master/.github/workflows/postgres-service.yml
+      postgres:
+        image: postgres:12
+        env:
+          POSTGRES_USER: odoo
+          POSTGRES_PASSWORD: postgres_pswd
+        ports:
+          - 5432:5432
+        options:
+          --health-cmd pg_isready --health-interval 10s --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - uses: actions/cache@v2.1.3
+        id: cache-pip
+        with:
+          path: ~/.cache/pip
+          key: cache-pip-${{ hashFiles('**/requirements.txt') }}
+      - uses: webfactory/ssh-agent@v0.4.1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: testing
+        env:
+          PGHOST: postgres
+          PGUSER: odoo
+          PGPASSWORD: postgres_pswd
+          PGPORT: 5432
+        run: |
+          . setup_oca_mqt
+          travis_run_tests
